@@ -11,13 +11,19 @@
     <header>
         <h1>Dictionary</h1>
     </header>
-    <div id="form container">
+    <div id="form-container">
         <form role="search">
-            <input type="search" id="word-search" name="q"  placeholder="Enter search here...">
-            <button>Search</button>
+            <input type="search" id="word-search" placeholder="Enter search here..." aria-label="Search for a word">
+            <button aria-label="Submit search">Search</button>
         </form>
     </div>
-    <div id="form results">
+    <div id="form-results">
+        <div id="loading" class="hidden">
+            <p>Loading...</p>
+        </div>
+        <div id="error-message" class="hidden"></div>
+        <div id="results-container"></div>
     </div>
+    <script src="index.js"></script>
 </body>
 </html>
