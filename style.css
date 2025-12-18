@@ -1,0 +1,80 @@
+.hidden {
+    display: none;
+}
+
+body {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background-color: beige;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header {
+    text-align: center;
+    padding: 20px 20px;
+    border-bottom: solid 2px grey;
+}
+
+header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+#form-container {
+    text-align: center;
+    margin: 1rem 1rem;
+    padding: 5px;
+}
+
+#word-search {
+    width: 300px;
+    padding: 10px;
+    font-size: 1rem;
+    border: solid 1px grey;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+button {
+    padding: 10px 20px 10px;
+    color: rgb(50, 60, 50);
+    background-color: rgb(140, 160, 130);
+    transition: background-color 0.3s;
+    border-radius: 4px;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(120, 140, 110);
+}
+
+#word-search:focus {
+    border-color: rgb(140, 160, 130);
+    outline: none;
+    box-shadow: 0 0 5px rgba(140, 160, 130, 0.4);
+}
+
+#results-container {
+    margin-top: 1rem;
+    padding: 5px;
+    background-color: rgb(255, 253, 250
+    );
+}
+
+#loading {
+    text-align: center;
+    color: grey;
+    padding: 1rem;
+}
+
+#error-message {
+    color: rgb(200, 50, 50);
+    padding: 1rem;
+    font-weight: bold;
+    background-color: rgb(255, 235, 235);
+    border: solid 2px rgb(255, 200, 200);
+    border-radius: 4px;
+}
