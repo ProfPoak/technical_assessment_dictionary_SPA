@@ -59,9 +59,11 @@ button:hover {
 
 #results-container {
     margin-top: 1rem;
-    padding: 5px;
+    padding: 20px;
     background-color: rgb(255, 253, 250
     );
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.250);
 }
 
 #loading {
@@ -77,4 +79,16 @@ button:hover {
     background-color: rgb(255, 235, 235);
     border: solid 2px rgb(255, 200, 200);
     border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+    #word-search {
+        width: 95%;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 95%;
+    }
 }
