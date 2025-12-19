@@ -38,6 +38,7 @@ async function fetchWord(inputValue) {
         //Parsing if good response
         const entry = await response.json()
         console.log(entry)
+        goodDisplay(entry)
     }
     catch (error) {
         loading.classList.add('hidden')
@@ -67,8 +68,8 @@ function goodDisplay (entry) {
 
     //DOM manipulation
     const wordDisplay = document.createElement('h3')
-    wordDisplay = word
-    resultsContainer.append(word)
+    wordDisplay.textContent = word
+    resultsContainer.append(wordDisplay)
 
     if (phonetic) {
         const phoneticDisplay = document.createElement('p')
@@ -77,9 +78,9 @@ function goodDisplay (entry) {
     }
 
     if (audioURL) {
-        const audioDisplay = document.createElement(audio)
-        audioDisplay.setAttribute(src, audioURL)
-        audioDisplay.setAttribute(controls, 'true')
+        const audioDisplay = document.createElement('audio')
+        audioDisplay.src = audioURL
+        audioDisplay.controls = true
         resultsContainer.append(audioDisplay)
     }
 
