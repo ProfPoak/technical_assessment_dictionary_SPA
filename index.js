@@ -84,6 +84,33 @@ function goodDisplay (entry) {
         resultsContainer.append(audioDisplay)
     }
 
+    //Looping for definitions
+    meanings.forEach(meaning => {
+        const partOfSpeech = document.createElement('h4')
+        partOfSpeech.textContent = meaning.partOfSpeech
+        resultsContainer.append(partOfSpeech)
 
+        const definitionsList = document.createElement('ol')
+
+        //abbreviated definitions
+        const abvDefinitions = meaning.definitions.slice(0,3)
+
+        abvDefinitions.forEach(definition => {
+            const definitionEntry = document.createElement('li')
+            definitionEntry.textContent = definition.definition
+
+            if (definition.example) {
+                const example = document.createElement('em')
+                example.textContent = ` - ${definition.example}`
+                definitionEntry.append(example)
+            }
+
+            definitionsList.append(definitionEntry)
+
+        })
+
+        resultsContainer.append(definitionsList)
+
+    });
     
 }
