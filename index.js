@@ -16,6 +16,15 @@ form.addEventListener('submit', (event) => {
         return
     }
 
+    const isValidWord = /^[a-zA-Z]+$/.test(inputValue)
+    
+    if(!isValidWord) {
+        const errorMessage = document.getElementById('error-message')
+        errorMessage.textContent = 'Enter letters only (no numbers or special characters)'
+        errorMessage.classList.remove('hidden')
+        return
+    }
+
     fetchWord(inputValue)
 })
 
