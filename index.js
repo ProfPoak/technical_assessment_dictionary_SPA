@@ -84,24 +84,22 @@ function goodDisplay (entry) {
         resultsContainer.append(audioDisplay)
     }
 
-    //Looping for definitions
+    //Looping for definitions and synonyms
     meanings.forEach(meaning => {
+        //Creating section header for each part of speech
         const partOfSpeech = document.createElement('h4')
         partOfSpeech.textContent = meaning.partOfSpeech
         resultsContainer.append(partOfSpeech)
 
+        //Creating list of definitions
         const definitionsList = document.createElement('ol')
-
-        //abbreviated definitions
-        const abvDefinitions = meaning.definitions.slice(0,3)
-
-        abvDefinitions.forEach(definition => {
+        meaning.definitions.forEach(definition => {
             const definitionEntry = document.createElement('li')
             definitionEntry.textContent = definition.definition
 
             if (definition.example) {
                 const example = document.createElement('em')
-                example.textContent = ` - ${definition.example}`
+                example.textContent = ` - "${definition.example}"`
                 definitionEntry.append(example)
             }
 
@@ -110,6 +108,18 @@ function goodDisplay (entry) {
         })
 
         resultsContainer.append(definitionsList)
+        
+        //Adding in synonyms if the data exists
+        if(meaning.synonyms && meaning.synonyms.length > 0) {
+            const synonymHead = document.createElement('h5')
+            synonymHead.textContent = 'Synonyms:'
+            
+            const synonym = document.createElement('p')
+            const synonymString = meaning.synonyms.join(', ')
+            synonym.textContent = synonymString
+            
+            resultsContainer.append(synonymHead, synonym)
+        }
 
     });
     
